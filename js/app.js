@@ -4,6 +4,8 @@ const $name = $("#name")
 const $img = $("img");
 const $input = $('input[type="text"]')
 
+
+
 //Event Listener
 $('form').on('submit', handleGetData);
 
@@ -12,8 +14,9 @@ function handleGetData(event){
   event.preventDefault();
 
   //Get the user input
-  userInput = $input.val();
-
+  userInput = $input.val().toLowerCase();
+  
+  //Make Api call
   $.ajax({
     url:  'https://pokeapi.co/api/v2/pokemon/' + userInput
   }).then(
@@ -26,10 +29,14 @@ function handleGetData(event){
     }
   )
   
+  //Render funntion that determines what we display to the dom
   function render(){
     $name.text(pokemon.name)
-    $img.attr('src', pokemon.sprites.front_default)
+    $img.attr('src', pokemon.sprites.other['official-artwork'].front_default)
+    // console.log(pokemon.sprites.other['official-artwork'].front_default)
   }
+
+  userInput = $input.val('');
 }
 
 
