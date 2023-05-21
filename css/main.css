@@ -3,9 +3,23 @@ body{
 }
 
 #name{
-  font-size: 50px;
+  color: #fff;
+  font-size: 20px;
+  margin-top: -15px;
+}
+
+.titles{
+  font-size: 30px;
 }
 
 img{
   width: 100px;
+}
+
+.moves{
+  color: #fff;
+  list-style: none;
+  /* background-color: aqua; */
+  margin-top: -30px;
+  width: 20%;
 }
