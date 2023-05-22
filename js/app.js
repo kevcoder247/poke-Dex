@@ -2,7 +2,9 @@ let pokemon;
 
 const $name = $("#name")
 const $img = $("img");
+const $type = $("#type")
 const $input = $('input[type="text"]')
+
 
 //Event Listener
 $('form').on('submit', handleGetData);
@@ -29,8 +31,22 @@ function handleGetData(event){
   
   //Render funntion that determines what we display to the dom
   function render(){
-    $name.text(pokemon.name)
+    $name.text(`Pokemon: ${pokemon.name}`)
+    $type.text(`Type: ${pokemon.types[0].type.name}`)
     $img.attr('src', pokemon.sprites.other['official-artwork'].front_default)
+
+    //Display the pokemons type
+    console.log(pokemon.types[0].type.name)
+
+    
+
+
+
+
+
+
+
+
     
     //Create a loop that loops through the first 3 moves and displays them to the dom
     // console.log(pokemon.moves[50].move.name)
@@ -38,7 +54,7 @@ function handleGetData(event){
     //Refernce variable where the moves array is located
     let pokemonMoves = pokemon.moves;
 
-    //Empty array where we will push our moves
+    //Empty array where we will push pokemons moves
     let movesArray = [];
 
     for(let i = 0; i < pokemonMoves.length; i++){
