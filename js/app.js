@@ -38,14 +38,6 @@ function handleGetData(event){
     //Display the pokemons type
     console.log(pokemon.types[0].type.name)
 
-    
-
-
-
-
-
-
-
 
     
     //Create a loop that loops through the first 3 moves and displays them to the dom
@@ -68,12 +60,13 @@ function handleGetData(event){
     //Reference Variable that will hold  the unordered list we will append the moves to
     const $pokeMoves = $('#pokemon-moves');
 
+    $($pokeMoves).append('Moves: ')
+
     //loop through the first Three Moves array and append each move as a new LI to pokemon-moves which is a reference to our unordered list
     firstThreeMoves.forEach((move) => {
       let $newItem = `<li>${move}</li>`
       $($pokeMoves).append($newItem)
-      
-  })
+    })
 }
 
   userInput = $input.val('');
