@@ -74,7 +74,7 @@ html, body{
   margin: auto;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -89,6 +89,7 @@ img{
 .moves{
   list-style: none;
   /* background-color: aqua; */
+  padding-right: 29px;
 }
 
 .info{

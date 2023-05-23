@@ -22,10 +22,7 @@ function handleGetData(event){
   $img.attr('src', '');
   $('#pokemon-moves').empty();
 
-
-
-  
-  //Make Api call
+//Make Api call
   $.ajax({
     url:  'https://pokeapi.co/api/v2/pokemon/' + userInput
   }).then(
@@ -40,15 +37,14 @@ function handleGetData(event){
   
   //Render funntion that determines what we display to the dom
   function render(){
-    $name.text(`Pokemon: ${pokemon.name}`)
-    $type.text(`Type: ${pokemon.types[0].type.name}`)
+    $name.text(`Pokemon: ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`)
+    $type.text(`Type: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`)
     $img.attr('src', pokemon.sprites.other['official-artwork'].front_default)
 
     //Display the pokemons type
-    console.log(pokemon.types[0].type.name)
+    // console.log(pokemon.types[0].type.name)
 
 
-    
     //Create a loop that loops through the first 3 moves and displays them to the dom
     // console.log(pokemon.moves[50].move.name)
 
