@@ -15,6 +15,15 @@ function handleGetData(event){
 
   //Get the user input
   userInput = $input.val().toLowerCase();
+
+  //Clear previous search results
+  $name.empty();
+  $type.empty();
+  $img.attr('src', '');
+  $('#pokemon-moves').empty();
+
+
+
   
   //Make Api call
   $.ajax({
@@ -68,7 +77,7 @@ function handleGetData(event){
       $($pokeMoves).append($newItem)
     })
 }
-
+  //Reset user input
   userInput = $input.val('');
 }
 
